@@ -36,20 +36,24 @@ export default function AlgorithmView({ algorithmName }: props) {
                 <Heading>{algorithmName}</Heading>
                 <Skeleton isLoaded={loaded}>
                     <Flex gap="1rem">
-                        <Button
-                            onClick={() => {
-                                window.open(lcLink);
-                            }}
-                        >
-                            <SiLeetcode color="orange" />
-                        </Button>
-                        <Button
-                            onClick={() => {
-                                window.open(geeksLink);
-                            }}
-                        >
-                            <SiGeeksforgeeks color="green" />
-                        </Button>
+                        {lcLink && (
+                            <Button
+                                onClick={() => {
+                                    window.open(lcLink);
+                                }}
+                            >
+                                <SiLeetcode color="orange" />
+                            </Button>
+                        )}
+                        {geeksLink && (
+                            <Button
+                                onClick={() => {
+                                    window.open(geeksLink);
+                                }}
+                            >
+                                <SiGeeksforgeeks color="green" />
+                            </Button>
+                        )}
                     </Flex>
                 </Skeleton>
             </Flex>

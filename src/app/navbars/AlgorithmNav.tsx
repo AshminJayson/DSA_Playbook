@@ -7,6 +7,10 @@ import { useEffect } from "react";
 const algoItems = new Map<number, string>([
     [0, "searches"],
     [1, "sorts"],
+    [2, "stackandqueue"],
+    [3, "trees"],
+    [4, "linkedlist"],
+    [5, "graphs"],
 ]);
 
 export default function AlgorithmNav() {

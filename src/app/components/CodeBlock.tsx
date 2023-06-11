@@ -12,7 +12,7 @@ const CodeBlock = ({ language, code }: props) => {
     return (
         <SyntaxHighlighter
             customStyle={{
-                borderRadius: "10px",
+                borderRadius: "5px",
                 // background: "rgba(255, 255, 255, 0.25)",
                 backdropFilter: "blur( 0px )",
                 border: "border: 1px solid rgba( 255, 255, 255, 0.18 );",

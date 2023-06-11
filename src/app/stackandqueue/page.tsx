@@ -6,8 +6,8 @@ import AlgorithmView from "../components/AlgorithmView";
 export default function Page() {
     return (
         <Flex flexDirection="column">
-            <AlgorithmView algorithmName="Selection Sort"></AlgorithmView>
-            <AlgorithmView algorithmName="Bubble Sort"></AlgorithmView>
+            <AlgorithmView algorithmName="Stack"></AlgorithmView>
+            <AlgorithmView algorithmName="Queue"></AlgorithmView>
             <AlgorithmView algorithmName="Insertion Sort"></AlgorithmView>
             <AlgorithmView algorithmName="Quick Sort"></AlgorithmView>
             <AlgorithmView algorithmName="Merge Sort"></AlgorithmView>
