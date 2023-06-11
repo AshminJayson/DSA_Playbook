@@ -16,7 +16,7 @@ const algoItems = new Map<number, string>([
 export default function AlgorithmNav() {
     const router = useRouter();
     const handleNavChange = (tabIndex: number) => {
-        console.log("handle");
+        // console.log("handle");
         router.push(`/${algoItems.get(tabIndex)}`);
     };
 

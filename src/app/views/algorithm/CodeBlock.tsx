@@ -1,7 +1,7 @@
 "use client";
 
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { atomOneDarkReasonable } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 interface props {
     language: string;
@@ -14,12 +14,12 @@ const CodeBlock = ({ language, code }: props) => {
             customStyle={{
                 borderRadius: "5px",
                 // background: "rgba(255, 255, 255, 0.25)",
-                backdropFilter: "blur( 0px )",
-                border: "border: 1px solid rgba( 255, 255, 255, 0.18 );",
+                // backdropFilter: "blur( 0px )",
+                border: "border: 1px solid rgba( 255, 255, 255, 0.18 )",
             }}
             showLineNumbers
             language={language}
-            style={nightOwl}
+            style={atomOneDarkReasonable}
         >
             {code}
         </SyntaxHighlighter>

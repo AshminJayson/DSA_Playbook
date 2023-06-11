@@ -5,4 +5,5 @@ export {
     SiLeetcode,
     SiYoutube,
     SiPlaycanvas,
+    SiHackerrank,
 } from "react-icons/si";

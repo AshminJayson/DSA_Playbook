@@ -1,13 +1,13 @@
 "use client";
 
 import { Flex } from "@chakra-ui/react";
-import AlgorithmView from "../components/AlgorithmView";
+import AlgorithmView from "../views/algorithm/AlgorithmView";
 
 export default function Page() {
     return (
         <Flex flexDirection="column">
-            <AlgorithmView algorithmName="Linear Search"></AlgorithmView>
-            <AlgorithmView algorithmName="Binary Search"></AlgorithmView>
+            <AlgorithmView topicName="Linear Search"></AlgorithmView>
+            <AlgorithmView topicName="Binary Search"></AlgorithmView>
         </Flex>
     );
 }
