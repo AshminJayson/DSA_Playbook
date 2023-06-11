@@ -3,9 +3,9 @@
 import { Button, Flex, Text, useColorMode } from "@chakra-ui/react";
 import {
     FaGithub,
-    GiLightningTrio,
     MdDarkMode,
     MdSunny,
+    SiPlaycanvas,
 } from "../abstractions/icons";
 
 export default function MainNav() {
@@ -21,7 +21,7 @@ export default function MainNav() {
                 justify="center"
                 gap="1rem"
             >
-                <GiLightningTrio style={{ color: `#FF6000` }} size={30} />
+                <SiPlaycanvas style={{ color: `#FF6000` }} size={30} />
                 <Text fontSize="2xl" fontWeight="medium">
                     DSA Playbook
                 </Text>

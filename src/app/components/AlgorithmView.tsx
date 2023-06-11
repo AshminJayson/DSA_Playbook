@@ -2,7 +2,7 @@ import { Text, Flex, Heading, Button, Skeleton } from "@chakra-ui/react";
 
 import { useEffect, useState } from "react";
 import { supabase } from "../utils/supabaseClient";
-import { SiGeeksforgeeks, SiLeetcode } from "../abstractions/icons";
+import { SiGeeksforgeeks, SiLeetcode, SiYoutube } from "../abstractions/icons";
 import CodeBlock from "./CodeBlock";
 
 interface props {
@@ -15,6 +15,7 @@ export default function AlgorithmView({ algorithmName }: props) {
     const [code, setCode] = useState<string>("");
     const [lcLink, setLclink] = useState<string | undefined>();
     const [geeksLink, setGeeksLink] = useState<string | undefined>();
+    const [ytlink, setYtLink] = useState<string | undefined>();
 
     useEffect(() => {
         (async () => {
@@ -26,6 +27,7 @@ export default function AlgorithmView({ algorithmName }: props) {
             setCode(data?.[0].code);
             setLclink(data?.[0].leetcode_link);
             setGeeksLink(data?.[0].geeks_for_geeks_link);
+            setYtLink(data?.[0].youtube_link);
             setLoaded(true);
         })();
     }, []);
@@ -52,6 +54,15 @@ export default function AlgorithmView({ algorithmName }: props) {
                                 }}
                             >
                                 <SiGeeksforgeeks color="green" />
+                            </Button>
+                        )}
+                        {ytlink && (
+                            <Button
+                                onClick={() => {
+                                    window.open(ytlink);
+                                }}
+                            >
+                                <SiYoutube color="red" />
                             </Button>
                         )}
                     </Flex>
