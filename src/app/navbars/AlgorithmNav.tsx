@@ -29,8 +29,7 @@ export default function AlgorithmNav() {
             onChange={(tabIndex) => {
                 handleNavChange(tabIndex);
             }}
-            // orientation="vertical"
-            isFitted
+            // isFitted
             align="center"
         >
             <TabList>
