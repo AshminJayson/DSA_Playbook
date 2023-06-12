@@ -8,8 +8,8 @@ const algoItems = new Map<number, string>([
     [0, "searches"],
     [1, "sorts"],
     [2, "stackandqueue"],
-    [3, "trees"],
-    [4, "linkedlist"],
+    [3, "linkedlist"],
+    [4, "trees"],
     [5, "graphs"],
 ]);
 
@@ -37,8 +37,8 @@ export default function AlgorithmNav() {
                 <Tab>Searches</Tab>
                 <Tab>Sorts</Tab>
                 <Tab>Stack and Queue</Tab>
-                <Tab>Trees</Tab>
                 <Tab>Linked List</Tab>
+                <Tab>Trees</Tab>
                 <Tab>Graphs</Tab>
             </TabList>
         </Tabs>

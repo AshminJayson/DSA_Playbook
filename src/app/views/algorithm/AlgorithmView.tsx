@@ -1,3 +1,5 @@
+"use client";
+
 import { Text, Flex, Heading, Button, Skeleton } from "@chakra-ui/react";
 
 import { useEffect, useState } from "react";

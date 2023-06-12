@@ -1,3 +1,5 @@
+"use client";
+
 import { Flex, Button } from "@chakra-ui/react";
 import {
     SiLeetcode,

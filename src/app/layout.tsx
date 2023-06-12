@@ -5,6 +5,7 @@ import MainNav from "./navbars/MainNav";
 import { Providers } from "./providers";
 import { Orbitron } from "next/font/google";
 import AlgorithmNav from "./navbars/AlgorithmNav";
+import Footer from "./views/footer/Footer";
 
 const orbitron = Orbitron({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
                         <MainNav />
                         <AlgorithmNav />
                         {children}
+                        <Footer />
                     </Flex>
                 </Providers>
             </body>

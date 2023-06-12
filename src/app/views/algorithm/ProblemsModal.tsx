@@ -1,3 +1,5 @@
+"use client";
+
 import { supabase } from "../../utils/supabaseClient";
 import {
     Modal,
@@ -64,7 +66,7 @@ export function ProblemsModal({ topicId, topicName }: props) {
                     <ModalBody>
                         <Skeleton isLoaded={loaded}>
                             {problems && problems.length === 0 && (
-                                <Text>No available questions</Text>
+                                <Text>No questions available</Text>
                             )}
                             {problems && problems.length != 0 && (
                                 <TableContainer>
