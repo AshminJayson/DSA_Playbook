@@ -18,7 +18,16 @@ export default function RootLayout({
         <html lang="en">
             <body className={orbitron.className}>
                 <Providers>
-                    <Flex flexDirection="column" height="100vh">
+                    <Flex
+                        flexDirection="column"
+                        height="100vh"
+                        overflow="scroll"
+                        sx={{
+                            "::-webkit-scrollbar": {
+                                display: "none",
+                            },
+                        }}
+                    >
                         <MainNav />
                         <AlgorithmNav />
                         {children}
