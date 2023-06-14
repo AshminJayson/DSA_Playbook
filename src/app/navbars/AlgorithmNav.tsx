@@ -18,6 +18,7 @@ export default function AlgorithmNav() {
     const pathName = usePathname();
     const [tabIndex, setTabIndex] = useState<number>(0);
     const handleNavChange = (tabIndex: number) => {
+        setTabIndex(tabIndex);
         router.push(`/${algoItems.get(tabIndex)}`);
     };
 
