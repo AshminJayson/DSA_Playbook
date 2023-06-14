@@ -2,7 +2,7 @@
 
 import { Tabs, TabList, Tab } from "@chakra-ui/react";
 import { useRouter, usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const algoItems = new Map<number, string>([
     [0, "searches"],
@@ -16,17 +16,24 @@ const algoItems = new Map<number, string>([
 export default function AlgorithmNav() {
     const router = useRouter();
     const pathName = usePathname();
+    const [tabIndex, setTabIndex] = useState<number>(0);
     const handleNavChange = (tabIndex: number) => {
-        // console.log("handle");
         router.push(`/${algoItems.get(tabIndex)}`);
     };
 
     useEffect(() => {
         if (pathName == "/") router.push(`/${algoItems.get(0)}`);
+        algoItems.forEach((value, key) => {
+            if (value == pathName.slice(1)) {
+                setTabIndex(key);
+                return;
+            }
+        });
     }, []);
 
     return (
         <Tabs
+            index={tabIndex}
             onChange={(tabIndex) => {
                 handleNavChange(tabIndex);
             }}
