@@ -1,7 +1,7 @@
 "use client";
 
 import { Tabs, TabList, Tab } from "@chakra-ui/react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 const algoItems = new Map<number, string>([
@@ -15,13 +15,14 @@ const algoItems = new Map<number, string>([
 
 export default function AlgorithmNav() {
     const router = useRouter();
+    const pathName = usePathname();
     const handleNavChange = (tabIndex: number) => {
         // console.log("handle");
         router.push(`/${algoItems.get(tabIndex)}`);
     };
 
     useEffect(() => {
-        router.push(`/${algoItems.get(0)}`);
+        if (pathName == "/") router.push(`/${algoItems.get(0)}`);
     }, []);
 
     return (
