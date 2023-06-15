@@ -10,31 +10,35 @@ import Footer from "./views/footer/Footer";
 const orbitron = Orbitron({ subsets: ["latin"] });
 
 export default function RootLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-    return (
-        <html lang="en">
-            <body className={orbitron.className}>
-                <Providers>
-                    <Flex
-                        flexDirection="column"
-                        height="100vh"
-                        overflow="scroll"
-                        sx={{
-                            "::-webkit-scrollbar": {
-                                display: "none",
-                            },
-                        }}
-                    >
-                        <MainNav />
-                        <AlgorithmNav />
-                        {children}
-                        <Footer />
-                    </Flex>
-                </Providers>
-            </body>
-        </html>
-    );
+  return (
+    <html lang="en">
+      <body className={orbitron.className}>
+        <Providers>
+          <Flex
+            flexDirection="column"
+            height="100vh"
+            overflow="scroll"
+            sx={{
+              "::-webkit-scrollbar": {
+                display: "none",
+              },
+              "&": {
+                msOverflowStyle: "none",
+                scrollbarWidth: "none",
+              },
+            }}
+          >
+            <MainNav />
+            <AlgorithmNav />
+            {children}
+            <Footer />
+          </Flex>
+        </Providers>
+      </body>
+    </html>
+  );
 }
