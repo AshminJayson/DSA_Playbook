@@ -20,8 +20,8 @@ const CodeBlock = ({ language, code }: props) => {
             language={language}
             text={code}
             wrapLines
+            //@ts-ignore
             theme={atomOneDark}
-            codeBlock
             copied
         />
     );
