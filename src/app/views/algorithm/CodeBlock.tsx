@@ -1,7 +1,8 @@
 "use client";
 
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { atomOneDarkReasonable } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import { atomOneDark } from "react-code-blocks";
+import { CopyBlock } from "react-code-blocks";
+import { toast } from "sonner";
 
 interface props {
     language: string;
@@ -10,19 +11,19 @@ interface props {
 
 const CodeBlock = ({ language, code }: props) => {
     return (
-        <SyntaxHighlighter
-            customStyle={{
-                borderRadius: "5px",
-                // background: "rgba(255, 255, 255, 0.25)",
-                // backdropFilter: "blur( 0px )",
-                border: "border: 1px solid rgba( 255, 255, 255, 0.18 )",
+        <CopyBlock
+            wrapLongLines
+            onCopy={() => {
+                toast.success("Code Block Copied 🧾");
             }}
             showLineNumbers
             language={language}
-            style={atomOneDarkReasonable}
-        >
-            {code}
-        </SyntaxHighlighter>
+            text={code}
+            wrapLines
+            theme={atomOneDark}
+            codeBlock
+            copied
+        />
     );
 };
 
