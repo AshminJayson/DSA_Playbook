@@ -1,11 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { createClient } from "@supabase/supabase-js";
-
-export const supabase = createClient(
-    process.env.SUPABASE_PROJECT_URL!,
-    process.env.SUPABASE_API_KEY!
-);
+import { supabase } from "@/app/store/supabase";
 
 export async function GET(req: NextRequest) {
     // console.log(req.nextUrl.searchParams.getAll("topic")[0]);
