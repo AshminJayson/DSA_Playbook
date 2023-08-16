@@ -1,12 +1,11 @@
 "use client";
 
-import { supabase } from "../../utils/supabaseClient";
+// import { supabase } from "../../utils/supabaseClient";
 import {
     Modal,
     ModalOverlay,
     ModalContent,
     ModalHeader,
-    ModalFooter,
     ModalBody,
     ModalCloseButton,
     Button,
@@ -14,7 +13,6 @@ import {
     Table,
     Thead,
     Tbody,
-    Tfoot,
     Tr,
     Th,
     Td,
@@ -23,7 +21,7 @@ import {
     Skeleton,
     Text,
 } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface props {
     topicId: number | undefined;
@@ -36,12 +34,9 @@ export function ProblemsModal({ topicId, topicName }: props) {
 
     async function openModal() {
         onOpen();
-        const { data, error } = await supabase
-            .from("Problems")
-            .select()
-            .order("difficulty")
-            .eq("topic_id", topicId);
 
+        const res = await fetch(`/api/problems?topicId=${topicId}`);
+        const data = await res.json();
         setProblems(data);
         setLoaded(true);
     }

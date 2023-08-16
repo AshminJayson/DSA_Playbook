@@ -3,7 +3,6 @@
 import { Text, Flex, Heading, Button, Skeleton } from "@chakra-ui/react";
 
 import { useEffect, useState } from "react";
-import { supabase } from "../../utils/supabaseClient";
 import CodeBlock from "./CodeBlock";
 import TopicButton from "./TopicButton";
 import { ProblemsModal } from "./ProblemsModal";
@@ -24,10 +23,11 @@ export default function AlgorithmView({ topicName }: props) {
 
     useEffect(() => {
         (async () => {
-            const { data } = await supabase
-                .from("Topics")
-                .select()
-                .eq("name", topicName);
+            const res = await fetch(`/api/topic?topic=${topicName}`, {
+                method: "GET",
+            });
+
+            const data = await res.json();
             setDescription(data?.[0].description);
             setCode(data?.[0].code);
             setLclink(data?.[0].leetcode_link);
